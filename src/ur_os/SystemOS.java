@@ -311,7 +311,7 @@ public class SystemOS implements Runnable{
         int cont = 1;
         
         
-        return cont / processes.size();
+        return (double)cont / processes.size();
     }
     
     

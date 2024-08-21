@@ -5,6 +5,8 @@
  */
 package ur_os;
 
+import java.util.Random;
+
 /**
  *
  * @author super
@@ -19,9 +21,12 @@ public class Process implements Comparable{
     ProcessBurstList pbl;
     ProcessState state;
     int currentScheduler;
+    int priority;
+    Random r;
 
 
     public Process() {
+        r = new Random();
         pid = -1;
         time_init = 0;
         time_finished = -1;
@@ -30,6 +35,7 @@ public class Process implements Comparable{
         //pbl.generateSimpleBursts(); //Generates process with 3 bursts (CPU, IO, CPU) with 5 cycles each
         state = ProcessState.NEW;
         currentScheduler = 0;
+        priority = 0;
     }
     
     public Process(boolean auto) {
@@ -40,6 +46,7 @@ public class Process implements Comparable{
         if(auto){
             pbl.generateRandomBursts(NUM_CPU_CYCLES, MAX_CPU_CYCLES, MAX_IO_CYCLES);
             //pbl.generateSimpleBursts(); //Generates process with 3 bursts (CPU, IO, CPU) with 5 cycles each
+            priority = r.nextInt(10);
         }
         state = ProcessState.NEW;
     }
@@ -133,7 +140,13 @@ public class Process implements Comparable{
         this.currentScheduler = currentScheduler;
     }
     
-    
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
     
     public String toString(){
         return "PID: "+pid+" t: "+time_init+" "+pbl;

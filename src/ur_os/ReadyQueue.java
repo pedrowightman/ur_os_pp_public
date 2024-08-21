@@ -24,11 +24,13 @@ public class ReadyQueue {
         
         //s = new SJF_NP(os);
         
-        //s = new FCFS(os);
+        s = new FCFS(os);
         
         //s = new RoundRobin(os,6);
         
-        s = new MFQ(os,new RoundRobin(os,3),new RoundRobin(os,6),new FCFS(os));
+        //s = new MFQ(os,new RoundRobin(os,3),new RoundRobin(os,6),new FCFS(os));
+        
+        //s = new PriorityQueue(os,new RoundRobin(os,9),new RoundRobin(os,6),new RoundRobin(os,3));
     }
     
     public ReadyQueue(OS OS, Scheduler s){

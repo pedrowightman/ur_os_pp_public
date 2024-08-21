@@ -90,6 +90,7 @@ public class SystemOS implements Runnable{
     public void initSimulationQueueSimpler(){
         
         Process p = new Process(false);
+        p.setPriority(0);
         ProcessBurst temp = new ProcessBurst(5,ProcessBurstType.CPU);    
         p.addBurst(temp);
         temp = new ProcessBurst(4,ProcessBurstType.IO);    
@@ -101,6 +102,7 @@ public class SystemOS implements Runnable{
         
         
         p = new Process(false);
+        p.setPriority(1);
         temp = new ProcessBurst(3,ProcessBurstType.CPU);    
         p.addBurst(temp);
         temp = new ProcessBurst(5,ProcessBurstType.IO);    
@@ -111,6 +113,7 @@ public class SystemOS implements Runnable{
         processes.add(p);
         
         p = new Process(false);
+        p.setPriority(2);
         temp = new ProcessBurst(7,ProcessBurstType.CPU);    
         p.addBurst(temp);
         temp = new ProcessBurst(3,ProcessBurstType.IO);    
@@ -121,6 +124,7 @@ public class SystemOS implements Runnable{
         processes.add(p);
         
         p = new Process(false);
+        p.setPriority(3);
         temp = new ProcessBurst(4,ProcessBurstType.CPU);    
         p.addBurst(temp);
         temp = new ProcessBurst(3,ProcessBurstType.IO);    
@@ -136,6 +140,7 @@ public class SystemOS implements Runnable{
     public void initSimulationQueueSimpler2(){
         
         Process p = new Process(false);
+        p.setPriority(0);
         ProcessBurst temp = new ProcessBurst(15,ProcessBurstType.CPU);    
         p.addBurst(temp);
         temp = new ProcessBurst(12,ProcessBurstType.IO);    
@@ -148,6 +153,7 @@ public class SystemOS implements Runnable{
         
         
         p = new Process(false);
+        p.setPriority(0);
         temp = new ProcessBurst(8,ProcessBurstType.CPU);    
         p.addBurst(temp);
         temp = new ProcessBurst(4,ProcessBurstType.IO);    
@@ -159,6 +165,7 @@ public class SystemOS implements Runnable{
         processes.add(p);
         
         p = new Process(false);
+        p.setPriority(1);
         temp = new ProcessBurst(10,ProcessBurstType.CPU);    
         p.addBurst(temp);
         temp = new ProcessBurst(5,ProcessBurstType.IO);    
@@ -170,6 +177,7 @@ public class SystemOS implements Runnable{
         processes.add(p);
         
         p = new Process(false);
+        p.setPriority(1);
         temp = new ProcessBurst(9,ProcessBurstType.CPU);    
         p.addBurst(temp);
         temp = new ProcessBurst(6,ProcessBurstType.IO);    
